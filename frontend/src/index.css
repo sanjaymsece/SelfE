@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #F4EFEA;
+    --text-primary: #382A37;
+    --text-muted: #756573;
+    --bg-card: #E5DCE0;
+    --bg-plum: #523B50;
+    --bg-plum-hover: #664A64;
+    --accent-rose: #D66882;
+    --accent-gold: #E8B259;
+    --accent-teal: #8BB8BD;
+    --border-soft: rgba(142, 122, 138, 0.25);
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Film grain effect */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Custom scrollbars matching SocioSync */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(142, 122, 138, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(82, 59, 80, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 59, 80, 0.45);
+}
+
+/* Keyframes for smooth animations */
+@keyframes orbRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes floatBubble {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-orb-rotate {
+  animation: orbRotate 28s linear infinite;
+}
+
+.animate-orb-pulse {
+  animation: orbPulse 6s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatBubble 5s ease-in-out infinite;
+}

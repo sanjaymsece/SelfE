@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# Virtual environment
+.venv/
+venv/
+
+# Local configuration and secrets
+.env
+*.sqlite3
+
+# Static / media
+staticfiles/
+media/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated schema
+schema.yml
